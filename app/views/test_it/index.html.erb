@@ -1,0 +1,8 @@
+<%= javascript_include_tag :defaults %>
+<%= collection_select(nil, :genre_id,  @genres,  :id, :name,
+                      {:prompt   => "Select a Genre"},
+                      {:onchange => "#{remote_function(:url  => {:action => "update_artists"},
+                                                       :with => "'genre_id='+value")}"}) %>
+<br/>
+<div id="artists"><%= render :partial => 'artists', :object => @artists %></div>
+<div id="songs"><%= render :partial => 'songs',   :object => @songs %></div>

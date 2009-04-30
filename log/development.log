@@ -1,0 +1,339 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (147.5ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateGenres (20090430203127)
+  [4;35;1mSQL (95.1ms)[0m   [0mCREATE TABLE `genres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090430203127')[0m
+Migrating to CreateArtists (20090430203140)
+  [4;35;1mSQL (97.6ms)[0m   [0mCREATE TABLE `artists` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `genre_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090430203140')[0m
+Migrating to CreateSongs (20090430203151)
+  [4;35;1mSQL (87.0ms)[0m   [0mCREATE TABLE `songs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `artist_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090430203151')[0m
+Migrating to CreateHierarchy (20090430203208)
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090430203208')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW FIELDS FROM `artists`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mdescribe `artists`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `artists`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `genres`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `genres`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `genres`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mdescribe `songs`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `songs`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGenre Load (0.4ms)[0m   [0;1mSELECT * FROM `genres` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateGenres (20090430203127)
+Migrating to CreateArtists (20090430203140)
+Migrating to CreateSongs (20090430203151)
+Migrating to CreateHierarchy (20090430203208)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `artists`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mdescribe `artists`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `artists`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW FIELDS FROM `genres`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `genres`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `genres`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `songs`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `songs`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateGenres (20090430203127)
+Migrating to CreateArtists (20090430203140)
+Migrating to CreateSongs (20090430203151)
+Migrating to CreateHierarchy (20090430210917)
+  [4;36;1mGenre Columns (4.6ms)[0m   [0;1mSHOW FIELDS FROM `genres`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mGenre Create (0.3ms)[0m   [0;1mINSERT INTO `genres` (`name`, `created_at`, `updated_at`) VALUES('Genre 1', '2009-04-30 21:09:41', '2009-04-30 21:09:41')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mGenre Create (0.2ms)[0m   [0mINSERT INTO `genres` (`name`, `created_at`, `updated_at`) VALUES('Genre 2', '2009-04-30 21:09:41', '2009-04-30 21:09:41')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGenre Create (0.3ms)[0m   [0;1mINSERT INTO `genres` (`name`, `created_at`, `updated_at`) VALUES('Genre 3', '2009-04-30 21:09:41', '2009-04-30 21:09:41')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mArtist Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `artists`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mArtist Create (0.3ms)[0m   [0;1mINSERT INTO `artists` (`name`, `created_at`, `genre_id`, `updated_at`) VALUES('Artist 1', '2009-04-30 21:09:41', 1, '2009-04-30 21:09:41')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mArtist Create (0.2ms)[0m   [0mINSERT INTO `artists` (`name`, `created_at`, `genre_id`, `updated_at`) VALUES('Artist 2', '2009-04-30 21:09:41', 1, '2009-04-30 21:09:41')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mArtist Create (0.2ms)[0m   [0;1mINSERT INTO `artists` (`name`, `created_at`, `genre_id`, `updated_at`) VALUES('Artist 3', '2009-04-30 21:09:41', 2, '2009-04-30 21:09:41')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mArtist Create (0.2ms)[0m   [0mINSERT INTO `artists` (`name`, `created_at`, `genre_id`, `updated_at`) VALUES('Artist 4', '2009-04-30 21:09:41', 2, '2009-04-30 21:09:41')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mArtist Create (0.2ms)[0m   [0;1mINSERT INTO `artists` (`name`, `created_at`, `genre_id`, `updated_at`) VALUES('Artist 5', '2009-04-30 21:09:41', 3, '2009-04-30 21:09:41')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mArtist Create (0.2ms)[0m   [0mINSERT INTO `artists` (`name`, `created_at`, `genre_id`, `updated_at`) VALUES('Artist 6', '2009-04-30 21:09:41', 3, '2009-04-30 21:09:41')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSong Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSong Create (0.2ms)[0m   [0mINSERT INTO `songs` (`created_at`, `title`, `updated_at`, `artist_id`) VALUES('2009-04-30 21:09:41', 'Song 1', '2009-04-30 21:09:41', 1)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSong Create (0.3ms)[0m   [0;1mINSERT INTO `songs` (`created_at`, `title`, `updated_at`, `artist_id`) VALUES('2009-04-30 21:09:41', 'Song 2', '2009-04-30 21:09:41', 1)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSong Create (0.2ms)[0m   [0mINSERT INTO `songs` (`created_at`, `title`, `updated_at`, `artist_id`) VALUES('2009-04-30 21:09:41', 'Song 3', '2009-04-30 21:09:41', 2)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSong Create (0.2ms)[0m   [0;1mINSERT INTO `songs` (`created_at`, `title`, `updated_at`, `artist_id`) VALUES('2009-04-30 21:09:41', 'Song 4', '2009-04-30 21:09:41', 2)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSong Create (0.3ms)[0m   [0mINSERT INTO `songs` (`created_at`, `title`, `updated_at`, `artist_id`) VALUES('2009-04-30 21:09:41', 'Song 5', '2009-04-30 21:09:41', 3)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSong Create (0.2ms)[0m   [0;1mINSERT INTO `songs` (`created_at`, `title`, `updated_at`, `artist_id`) VALUES('2009-04-30 21:09:41', 'Song 6', '2009-04-30 21:09:41', 3)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSong Create (0.2ms)[0m   [0mINSERT INTO `songs` (`created_at`, `title`, `updated_at`, `artist_id`) VALUES('2009-04-30 21:09:41', 'Song 7', '2009-04-30 21:09:41', 4)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSong Create (0.2ms)[0m   [0;1mINSERT INTO `songs` (`created_at`, `title`, `updated_at`, `artist_id`) VALUES('2009-04-30 21:09:41', 'Song 8', '2009-04-30 21:09:41', 4)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSong Create (0.2ms)[0m   [0mINSERT INTO `songs` (`created_at`, `title`, `updated_at`, `artist_id`) VALUES('2009-04-30 21:09:41', 'Song 9', '2009-04-30 21:09:41', 5)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSong Create (0.2ms)[0m   [0;1mINSERT INTO `songs` (`created_at`, `title`, `updated_at`, `artist_id`) VALUES('2009-04-30 21:09:41', 'Song 10', '2009-04-30 21:09:41', 5)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSong Create (0.2ms)[0m   [0mINSERT INTO `songs` (`created_at`, `title`, `updated_at`, `artist_id`) VALUES('2009-04-30 21:09:41', 'Song 11', '2009-04-30 21:09:41', 6)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSong Create (0.2ms)[0m   [0;1mINSERT INTO `songs` (`created_at`, `title`, `updated_at`, `artist_id`) VALUES('2009-04-30 21:09:41', 'Song 12', '2009-04-30 21:09:41', 6)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090430210917')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `artists`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mdescribe `artists`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `artists`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSHOW FIELDS FROM `genres`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mdescribe `genres`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `genres`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `songs`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `songs`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `songs`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mGenre Load (0.5ms)[0m   [0;1mSELECT * FROM `genres` LIMIT 1[0m
+  [4;35;1mGenre Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `genres`[0m
+  [4;36;1mArtist Load (0.4ms)[0m   [0;1mSELECT * FROM `artists` WHERE (`artists`.genre_id = 1) [0m
+  [4;35;1mArtist Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `artists`[0m
+  [4;36;1mSong Load (0.6ms)[0m   [0;1mSELECT `songs`.* FROM `songs` INNER JOIN `artists` ON `songs`.artist_id = `artists`.id WHERE ((`artists`.genre_id = 1)) [0m
+  [4;35;1mSong Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#index (for 127.0.0.1 at 2009-04-30 22:15:11) [GET]
+  [4;36;1mGenre Load (0.6ms)[0m   [0;1mSELECT * FROM `genres` [0m
+  [4;35;1mArtist Load (0.3ms)[0m   [0mSELECT * FROM `artists` [0m
+  [4;36;1mSong Load (0.3ms)[0m   [0;1mSELECT * FROM `songs` [0m
+Rendering test_it/index
+  [4;35;1mGenre Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `genres`[0m
+
+ActionView::TemplateError (Missing template test_it/_artists.erb in view path app/views) on line #7 of app/views/test_it/index.html.erb:
+4:                       {:onchange => "#{remote_function(:url  => {:action => "update_artists"},
+5:                                                        :with => "'genre_id='+value")}"}) %>
+6: <br/>
+7: <div id="artists"><%= render :partial => 'artists', :object => @artists %></div>
+8: <div id="songs"><%= render :partial => 'songs',   :object => @songs %></div>
+
+    app/views/test_it/index.html.erb:7
+
+Rendered rescues/_trace (198.1ms)
+Rendered rescues/_request_and_response (3.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#index (for 127.0.0.1 at 2009-04-30 22:15:51) [GET]
+  [4;36;1mGenre Load (0.4ms)[0m   [0;1mSELECT * FROM `genres` [0m
+  [4;35;1mArtist Load (0.3ms)[0m   [0mSELECT * FROM `artists` [0m
+  [4;36;1mSong Load (0.3ms)[0m   [0;1mSELECT * FROM `songs` [0m
+Rendering test_it/index
+  [4;35;1mGenre Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `genres`[0m
+  [4;36;1mArtist Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `artists`[0m
+Rendered test_it/_artists (8.6ms)
+  [4;35;1mSong Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+Rendered test_it/_songs (7.5ms)
+Completed in 96ms (View: 41, DB: 6) | 200 OK [http://0.0.0.0/test_it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#update_artists (for 127.0.0.1 at 2009-04-30 22:15:55) [POST]
+  Parameters: {"genre_id"=>"1", "authenticity_token"=>"zBCN8iDBYWGzJemfh9hqGq2cN75GqofwOLwvpv3Gb1A="}
+  [4;36;1mGenre Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `genres`[0m
+  [4;35;1mGenre Load (0.3ms)[0m   [0mSELECT * FROM `genres` WHERE (`genres`.`id` = 1) [0m
+  [4;36;1mArtist Load (0.4ms)[0m   [0;1mSELECT * FROM `artists` WHERE (`artists`.genre_id = 1) [0m
+  [4;35;1mArtist Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `artists`[0m
+Rendered test_it/_artists (9.3ms)
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT `songs`.* FROM `songs` INNER JOIN `artists` ON `songs`.artist_id = `artists`.id WHERE ((`artists`.genre_id = 1)) [0m
+  [4;35;1mSong Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+Rendered test_it/_songs (18.9ms)
+Completed in 104ms (View: 28, DB: 6) | 200 OK [http://0.0.0.0/test_it/update_artists]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#update_songs (for 127.0.0.1 at 2009-04-30 22:15:57) [POST]
+  Parameters: {"authenticity_token"=>"zBCN8iDBYWGzJemfh9hqGq2cN75GqofwOLwvpv3Gb1A=", "artist_id"=>"1"}
+  [4;36;1mArtist Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `artists`[0m
+  [4;35;1mArtist Load (0.3ms)[0m   [0mSELECT * FROM `artists` WHERE (`artists`.`id` = 1) [0m
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM `songs` WHERE (`songs`.artist_id = 1) [0m
+  [4;35;1mSong Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+Rendered test_it/_songs (8.3ms)
+Completed in 49ms (View: 10, DB: 4) | 200 OK [http://0.0.0.0/test_it/update_songs]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#update_songs (for 127.0.0.1 at 2009-04-30 22:16:02) [POST]
+  Parameters: {"authenticity_token"=>"zBCN8iDBYWGzJemfh9hqGq2cN75GqofwOLwvpv3Gb1A=", "artist_id"=>""}
+  [4;36;1mArtist Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `artists`[0m
+  [4;35;1mArtist Load (0.3ms)[0m   [0mSELECT * FROM `artists` WHERE (`artists`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Artist with ID=):
+  app/controllers/test_it_controller.rb:22:in `update_songs'
+
+Rendered rescues/_trace (178.2ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#update_artists (for 127.0.0.1 at 2009-04-30 22:16:08) [POST]
+  Parameters: {"genre_id"=>"2", "authenticity_token"=>"zBCN8iDBYWGzJemfh9hqGq2cN75GqofwOLwvpv3Gb1A="}
+  [4;36;1mGenre Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `genres`[0m
+  [4;35;1mGenre Load (0.3ms)[0m   [0mSELECT * FROM `genres` WHERE (`genres`.`id` = 2) [0m
+  [4;36;1mArtist Load (0.4ms)[0m   [0;1mSELECT * FROM `artists` WHERE (`artists`.genre_id = 2) [0m
+  [4;35;1mArtist Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `artists`[0m
+Rendered test_it/_artists (8.7ms)
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT `songs`.* FROM `songs` INNER JOIN `artists` ON `songs`.artist_id = `artists`.id WHERE ((`artists`.genre_id = 2)) [0m
+  [4;35;1mSong Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+Rendered test_it/_songs (20.2ms)
+Completed in 78ms (View: 29, DB: 7) | 200 OK [http://0.0.0.0/test_it/update_artists]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#update_songs (for 127.0.0.1 at 2009-04-30 22:16:10) [POST]
+  Parameters: {"authenticity_token"=>"zBCN8iDBYWGzJemfh9hqGq2cN75GqofwOLwvpv3Gb1A=", "artist_id"=>"3"}
+  [4;36;1mArtist Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `artists`[0m
+  [4;35;1mArtist Load (1.1ms)[0m   [0mSELECT * FROM `artists` WHERE (`artists`.`id` = 3) [0m
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM `songs` WHERE (`songs`.artist_id = 3) [0m
+  [4;35;1mSong Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+Rendered test_it/_songs (8.1ms)
+Completed in 61ms (View: 9, DB: 6) | 200 OK [http://0.0.0.0/test_it/update_songs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#update_songs (for 127.0.0.1 at 2009-04-30 22:16:13) [POST]
+  Parameters: {"authenticity_token"=>"zBCN8iDBYWGzJemfh9hqGq2cN75GqofwOLwvpv3Gb1A=", "artist_id"=>""}
+  [4;36;1mArtist Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `artists`[0m
+  [4;35;1mArtist Load (0.6ms)[0m   [0mSELECT * FROM `artists` WHERE (`artists`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Artist with ID=):
+  app/controllers/test_it_controller.rb:22:in `update_songs'
+
+Rendered rescues/_trace (104.8ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#update_songs (for 127.0.0.1 at 2009-04-30 22:16:17) [POST]
+  Parameters: {"authenticity_token"=>"zBCN8iDBYWGzJemfh9hqGq2cN75GqofwOLwvpv3Gb1A=", "artist_id"=>"3"}
+  [4;36;1mArtist Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `artists`[0m
+  [4;35;1mArtist Load (0.3ms)[0m   [0mSELECT * FROM `artists` WHERE (`artists`.`id` = 3) [0m
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM `songs` WHERE (`songs`.artist_id = 3) [0m
+  [4;35;1mSong Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+Rendered test_it/_songs (8.2ms)
+Completed in 50ms (View: 9, DB: 4) | 200 OK [http://0.0.0.0/test_it/update_songs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#update_artists (for 127.0.0.1 at 2009-04-30 22:16:20) [POST]
+  Parameters: {"genre_id"=>"1", "authenticity_token"=>"zBCN8iDBYWGzJemfh9hqGq2cN75GqofwOLwvpv3Gb1A="}
+  [4;36;1mGenre Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `genres`[0m
+  [4;35;1mGenre Load (0.3ms)[0m   [0mSELECT * FROM `genres` WHERE (`genres`.`id` = 1) [0m
+  [4;36;1mArtist Load (0.5ms)[0m   [0;1mSELECT * FROM `artists` WHERE (`artists`.genre_id = 1) [0m
+  [4;35;1mArtist Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `artists`[0m
+Rendered test_it/_artists (10.4ms)
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT `songs`.* FROM `songs` INNER JOIN `artists` ON `songs`.artist_id = `artists`.id WHERE ((`artists`.genre_id = 1)) [0m
+  [4;35;1mSong Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+Rendered test_it/_songs (19.4ms)
+Completed in 74ms (View: 30, DB: 6) | 200 OK [http://0.0.0.0/test_it/update_artists]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#update_artists (for 127.0.0.1 at 2009-04-30 22:16:26) [POST]
+  Parameters: {"genre_id"=>"", "authenticity_token"=>"zBCN8iDBYWGzJemfh9hqGq2cN75GqofwOLwvpv3Gb1A="}
+  [4;36;1mGenre Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `genres`[0m
+  [4;35;1mGenre Load (0.3ms)[0m   [0mSELECT * FROM `genres` WHERE (`genres`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Genre with ID=):
+  app/controllers/test_it_controller.rb:10:in `update_artists'
+
+Rendered rescues/_trace (105.1ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#update_artists (for 127.0.0.1 at 2009-04-30 22:16:46) [POST]
+  Parameters: {"genre_id"=>"2", "authenticity_token"=>"zBCN8iDBYWGzJemfh9hqGq2cN75GqofwOLwvpv3Gb1A="}
+  [4;36;1mGenre Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `genres`[0m
+  [4;35;1mGenre Load (0.3ms)[0m   [0mSELECT * FROM `genres` WHERE (`genres`.`id` = 2) [0m
+  [4;36;1mArtist Load (0.3ms)[0m   [0;1mSELECT * FROM `artists` WHERE (`artists`.genre_id = 2) [0m
+  [4;35;1mArtist Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `artists`[0m
+Rendered test_it/_artists (9.0ms)
+  [4;36;1mSong Load (0.5ms)[0m   [0;1mSELECT `songs`.* FROM `songs` INNER JOIN `artists` ON `songs`.artist_id = `artists`.id WHERE ((`artists`.genre_id = 2)) [0m
+  [4;35;1mSong Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+Rendered test_it/_songs (18.8ms)
+Completed in 74ms (View: 28, DB: 6) | 200 OK [http://0.0.0.0/test_it/update_artists]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestItController#update_songs (for 127.0.0.1 at 2009-04-30 22:16:52) [POST]
+  Parameters: {"authenticity_token"=>"zBCN8iDBYWGzJemfh9hqGq2cN75GqofwOLwvpv3Gb1A=", "artist_id"=>"4"}
+  [4;36;1mArtist Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `artists`[0m
+  [4;35;1mArtist Load (0.3ms)[0m   [0mSELECT * FROM `artists` WHERE (`artists`.`id` = 4) [0m
+  [4;36;1mSong Load (0.4ms)[0m   [0;1mSELECT * FROM `songs` WHERE (`songs`.artist_id = 4) [0m
+  [4;35;1mSong Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `songs`[0m
+Rendered test_it/_songs (9.0ms)
+Completed in 122ms (View: 10, DB: 4) | 200 OK [http://0.0.0.0/test_it/update_songs]
